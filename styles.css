@@ -1,0 +1,118 @@
+
+body, html {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+}
+
+#calendar {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    padding: 20px;
+}
+
+#calendar div {
+    padding: 15px;
+    border: 1px solid #ddd;
+    text-align: center;
+    cursor: pointer;
+}
+
+.hidden {
+    display: none;
+}
+
+#modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border: 1px solid #ccc;
+    z-index: 1000;
+}
+
+button {
+    margin: 5px;
+    padding: 10px 20px;
+}
+
+.today {
+    background-color: #ffdead;
+}
+
+
+#calendar div {
+    position: relative;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    border: 1px solid #ddd;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+.day-number {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.plan-preview {
+    font-size: 0.8em;
+    color: #333;
+    background-color: #f0b2eb;
+    overflow: hidden;
+    word-wrap: break-word;
+    max-height: 75px;
+    overflow-y: auto;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.plan-preview:hover::after {
+    content: attr(data-plan);
+    position: absolute;
+    white-space: pre-wrap;
+    background-color: #f9f9f9;
+    border: 1px solid #d1d1d1;
+    padding: 5px;
+    width: 200px;
+    z-index: 10;
+    left: 100%;
+    top: 0;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+}
+
+.day-header {
+    font-weight: bold;
+    padding: 10px;
+    text-align: center;
+    background-color: #e0e0e0;
+}
+
+.past-day {
+    color: #999;
+    background-color: #f7f7f7;
+}
+
+#monthYearPicker {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 5px;
+}
+
+#monthYearPicker.show {
+    display: block;
+}
